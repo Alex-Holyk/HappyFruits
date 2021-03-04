@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Scene from '../../components/Scene/Scene';
+import Configurator from '../../components/Configurator/Configurator';
+
 const URL =
   'https://pocket-rocket-public.s3.eu-central-1.amazonaws.com/code-challenge/products.json';
 
@@ -16,7 +19,12 @@ const BasketBuilder = () => {
     fetchProducts();
   }, []);
 
-  return <div></div>;
+  return (
+    <>
+      <Scene />
+      <Configurator />
+    </>
+  );
 };
 
 export default BasketBuilder;
