@@ -9,9 +9,9 @@ const mapProductsToObject = (productsArray) => {
   }, {});
 };
 
-const getDefaultBasket = (productsArray) => {
-  const baskets = productsArray.filter((item) => item.type === 'Basket');
-  return baskets[0].id;
+const getItemsByType = (productsArray, type) => {
+  const items = productsArray.filter((item) => item.type === type);
+  return items;
 };
 
-export { mapProductsToObject, getDefaultBasket };
+export { mapProductsToObject, getItemsByType };
