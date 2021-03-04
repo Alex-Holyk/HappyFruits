@@ -4,7 +4,7 @@ import axios from 'axios';
 import './BasketBuilder.css';
 import Scene from '../../components/Scene/Scene';
 import Configurator from '../../components/Configurator/Configurator';
-import { mapProductsToObject, getItemsByType } from './utils';
+import { mapProductsToObject, getItemsByType, calculateTotal } from './utils';
 
 const URL =
   'https://pocket-rocket-public.s3.eu-central-1.amazonaws.com/code-challenge/products.json';
@@ -14,6 +14,7 @@ const BasketBuilder = () => {
   const [baskets, setBaskets] = useState(null);
   const [products, setProducts] = useState({});
   const [basketProducts, setBasketProducts] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const initState = async () => {
@@ -26,7 +27,8 @@ const BasketBuilder = () => {
       setFruits(fruits);
       setBaskets(baskets);
       setProducts(mappedProducts);
-      setBasketProducts({ basket: baskets[0].id });
+      setBasketProducts({ basketId: baskets[0].id, total: baskets[0].price });
+      setIsLoading(false);
     };
 
     initState();
@@ -34,17 +36,20 @@ const BasketBuilder = () => {
 
   const basketSelectHandler = (basketId) => {
     const updatedBasketProducts = { ...basketProducts };
-    updatedBasketProducts.basket = basketId;
+    updatedBasketProducts.basketId = basketId;
+    updatedBasketProducts.total = calculateTotal(
+      basketProducts.total,
+      products[basketProducts.basketId].price,
+      products[basketId].price
+    );
     setBasketProducts(updatedBasketProducts);
   };
-
-  const isLoading = !fruits || !baskets;
 
   return (
     <div className='basket-builder-container'>
       {!isLoading ? (
         <>
-          <Scene />
+          <Scene basketProducts={basketProducts} products={products} />
           <Configurator
             // products={products}
             baskets={baskets}

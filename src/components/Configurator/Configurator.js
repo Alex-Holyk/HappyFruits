@@ -13,7 +13,7 @@ const Configurator = ({ baskets, fruits, basketProducts, onBasketSelect }) => {
           <BasketItem
             key={basket.id}
             item={basket}
-            selected={basketProducts.basket === basket.id}
+            selected={basketProducts.basketId === basket.id}
             onClick={onBasketSelect}
           />
         ))}
@@ -24,13 +24,14 @@ const Configurator = ({ baskets, fruits, basketProducts, onBasketSelect }) => {
             <BasketItem
               key={keyName}
               item={products[keyName]}
-              selected={basketProducts.basket === products[keyName].id}
+              selected={basketProducts.basketId === products[keyName].id}
               onClick={onBasketSelect}
             />
           );
         }
         return <FruitItem key={keyName} item={products[keyName]} />;
       })} */}
+      <div>{basketProducts.total}</div>
     </div>
   );
 };

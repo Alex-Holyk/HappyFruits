@@ -14,4 +14,8 @@ const getItemsByType = (productsArray, type) => {
   return items;
 };
 
-export { mapProductsToObject, getItemsByType };
+const calculateTotal = (total, oldPrice, newPrice) => {
+  return total - oldPrice + newPrice;
+};
+
+export { mapProductsToObject, getItemsByType, calculateTotal };
