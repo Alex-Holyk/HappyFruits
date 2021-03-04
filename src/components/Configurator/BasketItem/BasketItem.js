@@ -6,10 +6,10 @@ import './BasketItem.css';
 const BasketItem = ({ item, selected, onClick }) => {
   return (
     <button
-      className={cn('basket-button', selected && 'selected')}
+      className={cn('basket-item-button', selected && 'basked-item-selected')}
       onClick={() => onClick(item.id)}
     >
-      <img className='basket-img' src={item.image_url} alt='Basket' />
+      <img className='basket-item-img' src={item.image_url} alt='Basket' />
     </button>
   );
 };

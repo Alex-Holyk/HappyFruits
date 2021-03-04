@@ -1,10 +1,10 @@
-.basket-button {
+.basket-item-button {
   display: flex;
   align-items: center;
   width: 50px;
   height: 50px;
 }
 
-.basket-img {
+.basket-item-img {
   width: 100%;
 }
