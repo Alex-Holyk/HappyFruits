@@ -5,28 +5,32 @@ import './Configurator.css';
 import BasketItem from './BasketItem/BasketItem';
 import FruitItem from './FruitItem/FruitItem';
 
-const Configurator = ({
-  products,
-  basketProducts,
-  setBasketProducts,
-  onBasketSelect,
-}) => {
-  // debugger;
+const Configurator = ({ baskets, fruits, basketProducts, onBasketSelect }) => {
   return (
     <div className='configurator-container'>
-      {Object.keys(products).map((keyName) => {
+      <div className='basket-buttons-container'>
+        {baskets.map((basket) => (
+          <BasketItem
+            key={basket.id}
+            item={basket}
+            selected={basketProducts.basket === basket.id}
+            onClick={onBasketSelect}
+          />
+        ))}
+      </div>
+      {/* {fruits.map((keyName) => {
         if (products[keyName].type === 'Basket') {
           return (
             <BasketItem
+              key={keyName}
               item={products[keyName]}
               selected={basketProducts.basket === products[keyName].id}
               onClick={onBasketSelect}
             />
           );
         }
-
-        return <FruitItem item={products[keyName]} />;
-      })}
+        return <FruitItem key={keyName} item={products[keyName]} />;
+      })} */}
     </div>
   );
 };
