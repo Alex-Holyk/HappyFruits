@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import './BasketBuilder.css';
 import Scene from '../../components/Scene/Scene';
 import Configurator from '../../components/Configurator/Configurator';
 
@@ -20,10 +21,10 @@ const BasketBuilder = () => {
   }, []);
 
   return (
-    <>
+    <div className='basket-builder-container'>
       <Scene />
       <Configurator />
-    </>
+    </div>
   );
 };
 

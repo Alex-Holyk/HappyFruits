@@ -1,0 +1,7 @@
+.basket-builder-container {
+  display: flex;
+}
+
+.basket-builder-container > div {
+  flex-grow: 1;
+}
