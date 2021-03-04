@@ -1,22 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-const URL =
-  'https://pocket-rocket-public.s3.eu-central-1.amazonaws.com/code-challenge/products.json';
+import BasketBuilder from './containers/BasketBuilder/BasketBuilder';
+import './App.css';
 
 const App = () => {
-  const [products, setProducts] = useState(null);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const result = await axios.get(URL);
-      setProducts(result.data?.resources);
-    };
-
-    fetchProducts();
-  }, []);
-
-  return <div className='App'></div>;
+  return (
+    <div className='app'>
+      <BasketBuilder />
+    </div>
+  );
 };
 
 export default App;
