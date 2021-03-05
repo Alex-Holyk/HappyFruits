@@ -24,10 +24,10 @@ const FruitItem = ({ item, onChange, basketProducts }) => (
           mobile
           min={0}
           max={item.in_stock}
-          value={basketProducts[item.id] || 0}
+          value={basketProducts[item.id]?.count || 0}
           onChange={(value) => onChange(item, value)}
         />
-        <p>Total: {item.total || 0}</p>
+        <p>Total: {basketProducts[item.id]?.total || 0}</p>
       </div>
     </div>
   </div>

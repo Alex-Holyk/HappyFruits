@@ -15,7 +15,7 @@ const getItemsByType = (productsArray, type) => {
 };
 
 const calculateTotal = (total, oldPrice, newPrice) => {
-  return (total * 100 - oldPrice * 100 + newPrice * 100) / 100;
+  return (total * 100 - oldPrice * 100 + newPrice * 100).toFixed() / 100;
 };
 
 export { mapProductsToObject, getItemsByType, calculateTotal };

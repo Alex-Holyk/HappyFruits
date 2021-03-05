@@ -47,7 +47,7 @@ const BasketBuilder = () => {
 
   const fruitCountChangeHandler = (item, count) => {
     const oldProductTotal = basketProducts[item.id]?.total || 0;
-    const productTotal = (item.price * 100 * count) / 100;
+    const productTotal = (item.price * count * 100).toFixed() / 100;
     const updatedBasketProducts = { ...basketProducts };
     if (!updatedBasketProducts[item.id]) {
       updatedBasketProducts[item.id] = {};
