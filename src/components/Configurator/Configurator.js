@@ -1,5 +1,4 @@
 import React from 'react';
-import NumericInput from 'react-numeric-input';
 
 import './Configurator.css';
 import BasketItem from './BasketItem/BasketItem';
@@ -25,7 +24,12 @@ const Configurator = ({
         ))}
       </div>
       {fruits.map((fruit) => (
-        <FruitItem key={fruit.id} item={fruit} onChange={onFruitCountChange} />
+        <FruitItem
+          key={fruit.id}
+          item={fruit}
+          onChange={onFruitCountChange}
+          basketProducts={basketProducts}
+        />
       ))}
       <div>{basketProducts.total}</div>
     </div>

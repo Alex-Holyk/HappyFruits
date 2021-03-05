@@ -1,0 +1,17 @@
+.fruit-item-container {
+  margin-bottom: 32px;
+}
+
+.fruit-item-img {
+  width: 50px;
+}
+
+.fruit-info-container,
+.fruit-selling-info-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.fruit-selling-info-container {
+  justify-content: space-between;
+}

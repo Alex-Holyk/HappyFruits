@@ -45,6 +45,23 @@ const BasketBuilder = () => {
     setBasketProducts(updatedBasketProducts);
   };
 
+  const fruitCountChangeHandler = (item, count) => {
+    const oldProductTotal = basketProducts[item.id]?.total || 0;
+    const productTotal = (item.price * 100 * count) / 100;
+    const updatedBasketProducts = { ...basketProducts };
+    if (!updatedBasketProducts[item.id]) {
+      updatedBasketProducts[item.id] = {};
+    }
+
+    updatedBasketProducts[item.id].count = count;
+    updatedBasketProducts[item.id].total = productTotal;
+    updatedBasketProducts.total = calculateTotal(
+      basketProducts.total,
+      oldProductTotal,
+      productTotal
+    );
+  };
+
   return (
     <div className='basket-builder-container'>
       {!isLoading ? (
@@ -57,6 +74,7 @@ const BasketBuilder = () => {
             basketProducts={basketProducts}
             // setBasketProducts={setBasketProducts}
             onBasketSelect={basketSelectHandler}
+            onFruitCountChange={fruitCountChangeHandler}
           />
         </>
       ) : (
