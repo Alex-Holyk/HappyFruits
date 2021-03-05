@@ -1,0 +1,12 @@
+.basket-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.basket-img {
+  max-width: 100%;
+}

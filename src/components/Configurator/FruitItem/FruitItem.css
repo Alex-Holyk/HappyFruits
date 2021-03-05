@@ -1,0 +1,24 @@
+.fruit-item-container {
+  margin-bottom: 32px;
+}
+
+.fruit-item-img {
+  width: 50px;
+  margin-right: 16px;
+}
+
+.fruit-info-container,
+.fruit-selling-info-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.fruit-selling-info-container {
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.fruit-item-in-stock,
+.react-numeric-input {
+  margin-bottom: 8px;
+}

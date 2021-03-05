@@ -1,0 +1,17 @@
+.scene-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 32px;
+}
+
+.scene-fruits-container {
+  position: absolute;
+  width: 460px;
+  height: 300px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: end;
+  flex-wrap: wrap-reverse;
+}
