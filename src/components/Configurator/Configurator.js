@@ -31,7 +31,7 @@ const Configurator = ({
           basketProducts={basketProducts}
         />
       ))}
-      <div>{basketProducts.total}</div>
+      <div>Total price: {basketProducts.total}</div>
     </div>
   );
 };
