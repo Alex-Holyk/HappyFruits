@@ -69,11 +69,9 @@ const BasketBuilder = () => {
         <>
           <Scene basketProducts={basketProducts} products={products} />
           <Configurator
-            // products={products}
             baskets={baskets}
             fruits={fruits}
             basketProducts={basketProducts}
-            // setBasketProducts={setBasketProducts}
             onBasketSelect={basketSelectHandler}
             onFruitCountChange={fruitCountChangeHandler}
           />
