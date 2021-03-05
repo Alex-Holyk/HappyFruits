@@ -14,7 +14,7 @@ const FruitItem = ({ item, onChange, basketProducts }) => (
     </div>
     <div className='fruit-selling-info-container'>
       <div>
-        <p>In stock: {item.in_stock}</p>
+        <p className='fruit-item-in-stock'>In stock: {item.in_stock}</p>
         <p>
           Price per {item.unit}: {item.price}
         </p>
