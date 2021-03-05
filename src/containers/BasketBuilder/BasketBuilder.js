@@ -60,6 +60,7 @@ const BasketBuilder = () => {
       oldProductTotal,
       productTotal
     );
+    setBasketProducts(updatedBasketProducts);
   };
 
   return (
